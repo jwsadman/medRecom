@@ -2,12 +2,16 @@ from flask import Flask, request, render_template, jsonify  # Import jsonify
 import numpy as np
 import pandas as pd
 import pickle
+import signal
+import sys
 
 
 
 # flask app
 app = Flask(__name__)
 
+def handle_exit_signal(signum, frame):
+    print("Received exit signal. Cleaning up...")
 
 
 # load databasedataset===================================
@@ -97,5 +101,5 @@ def home():
 
 
 if __name__ == '__main__':
-
+    signal.signal(signal.SIGTERM, handle_exit_signal)
     app.run(debug=True)
