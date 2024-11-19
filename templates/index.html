@@ -54,7 +54,7 @@
     <form action="/predict" method="post">
         <div class="form-group">
             <label for="symptoms">Select Symptoms:</label>
-            <input type="text" class="form-control", id="symptoms" name="symptoms" placeholder="type systems such as itching, sleeping, aching etc">
+            <input type="text" class="form-control", id="symptoms" name="symptoms" placeholder="Type symptoms such as itching, sleeping, aching etc">
 
         </div>
         <br>
@@ -65,7 +65,7 @@
 
         {% if message %}
         <p style="color: red;">{{ message }}</p>
-    {% endif %}
+        {% endif %}
         <br>
 
         <button type="submit" class="btn btn-danger btn-lg" style="width: 100%; padding: 14px; margin-bottom: 5px;">Predict</button>
